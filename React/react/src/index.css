@@ -1,0 +1,18 @@
+*{
+  background-color: black;
+  color: white;
+}
+h1{
+  color: crimson;
+  padding-left: 60px;
+}
+button{
+  width: fit-content;
+  background-color: crimson;
+  color: white;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
