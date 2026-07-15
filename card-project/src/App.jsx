@@ -73,7 +73,6 @@ function App(){
         <>
         <div className="parent">
         {jobOpening.map(function(job){
-            console.log(job.companyName)
             return <Card key={job.companyName} img={job.brandLogo} company={job.companyName} date={job.datePosted} loc={job.location} pay={job.pay} post={job.post} tag1={job.tag1} tag2={job.tag2}/>
         })}
         </div>
