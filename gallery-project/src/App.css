@@ -1,0 +1,14 @@
+.zoom-in-image {
+  animation: zoomIn 220ms ease-out forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0.85;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
