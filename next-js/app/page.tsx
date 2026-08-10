@@ -1,10 +1,12 @@
 import Card from '@/components/Card';
 
-function Page() {
+
+async function Page() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const users = await response.json();
   return (
     <div>
-      <Card title="Dynamic" description="Component" />
-
+      <Card users={users}/>
     </div>
   );
 }
