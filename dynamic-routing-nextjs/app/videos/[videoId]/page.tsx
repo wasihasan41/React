@@ -1,17 +1,15 @@
-// app/videos/[videoId]/page.js
-
 import Link from 'next/link'
 import { students } from '../data'
 
 type Props = {
-  params: Promise<{  // ✅ Type as Promise!
+  params: Promise<{  
     videoId: string
   }>
 }
 
-// ✅ Make it async!
+
 export default async function StudentDetail({ params }: Props) {
-  // ✅ Await params!
+  
   const { videoId } = await params
   
   const studentId = parseInt(videoId)
