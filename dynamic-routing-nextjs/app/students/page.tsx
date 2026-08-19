@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { students } from './data'
+import { students } from '@/app/students/data'
 
 export default function StudentsList() {
   return (
@@ -7,7 +7,7 @@ export default function StudentsList() {
       <h1>📚 All Students List</h1>
       
       {students.map((student) => (
-        <Link key={student.id} href={`/videos/${student.id}`}>
+        <Link key={student.id} href={`/students/${student.id}`}>
           <div style={{
             padding: '15px',
             border: '1px solid #ddd',

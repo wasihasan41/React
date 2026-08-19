@@ -2,39 +2,37 @@ import Link from 'next/link'
 import { students } from '../data'
 
 type Props = {
-  params: Promise<{  
-    videoId: string
+  params: Promise<{
+    stdId: string
   }>
 }
 
-
 export default async function StudentDetail({ params }: Props) {
-  
-  const { videoId } = await params
-  
-  const studentId = parseInt(videoId)
+  const { stdId } = await params
+
+  const studentId = parseInt(stdId)
   const student = students.find(s => s.id === studentId)
-  
+
   if (!student) {
     return (
       <div style={{ padding: '20px' }}>
         <h1>❌ Student nahi mila!</h1>
         <p>Searched ID: {studentId}</p>
-        <Link href="/videos">
+        <Link href="/students">
           <button>Back to List</button>
         </Link>
       </div>
     )
   }
-  
+
   return (
     <div style={{ padding: '20px', maxWidth: '600px' }}>
-      <Link href="/videos">
+      <Link href="/students">
         <button>← Back to List</button>
       </Link>
 
       <h1>✅ {student.name}</h1>
-      
+
       <div style={{
         background: '#f5f5f5',
         padding: '20px',
@@ -53,9 +51,9 @@ export default async function StudentDetail({ params }: Props) {
         borderRadius: '5px'
       }}>
         <p className='text-black'>
-          <strong className='text-black'>Current URL:</strong> /videos/{student.id}
+          <strong className='text-black'>Current URL:</strong> /students/{student.id}
           <br />
-          <strong className='text-black'>Dynamic Param:</strong> videoId = {videoId}
+          <strong className='text-black'>Dynamic Param:</strong> stdId = {stdId}
         </p>
       </div>
     </div>
